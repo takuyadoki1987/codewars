@@ -393,4 +393,4 @@ function alphabetPosition(text) {
   return result.join(" ");
 }
 
-console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
