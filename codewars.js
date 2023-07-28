@@ -379,3 +379,18 @@ function cutIt(arr) {
 // }
 
 // console.log(cutIt(["ab", "cde", "fgh"])); // ["ab","cd","fg"]
+
+function alphabetPosition(text) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const textJoin = text.split(" ").join("").toLowerCase();
+  const result = []
+  for(let i = 0; i < textJoin.length; i++) {
+    let str = textJoin[i].replace(/[Ａ-Ｚａ-ｚ]/, x => String.fromCharCode(x.charCodeAt(0) - 0xFEE0));
+    if (alphabet.indexOf(str) !== -1) {
+      result.push(alphabet.indexOf(str) + 1);
+    }
+  }
+  return result.join(" ");
+}
+
+console.log(alphabetPosition("The sunset sets at twelve o' clock."));
