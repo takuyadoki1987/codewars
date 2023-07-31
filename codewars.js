@@ -393,4 +393,37 @@ function alphabetPosition(text) {
   return result.join(" ");
 }
 
-console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+function solve(n) {
+  let result = 0;
+  if(n % 10) return -1;
+  while(Math.sign(n - 500) === 1 || Math.sign(n - 500) === 0)  {
+    result++;
+    n -= 500;
+  }
+  while(Math.sign(n - 200) === 1 || Math.sign(n - 200) === 0) {
+    result++;
+    n -= 200;
+  }
+  while(Math.sign(n - 100) === 1 || Math.sign(n - 100) === 0) {
+    result++;
+    n -= 100;
+  }
+  while(Math.sign(n - 50) === 1 || Math.sign(n - 50) === 0) {
+    result++;
+    n -= 50;
+  }
+  while(Math.sign(n - 20) === 1 || Math.sign(n - 20) === 0) {
+    result++;
+    n -= 20;
+  }
+  while(Math.sign(n - 10) === 1 || Math.sign(n - 10) === 0) {
+    result++;
+    n -= 10;
+  }
+  return result;
+}
+
+// console.log(solve(1250));
+// console.log(solve(42));
