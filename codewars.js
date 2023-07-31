@@ -427,3 +427,35 @@ function solve(n) {
 
 // console.log(solve(1250));
 // console.log(solve(42));
+
+
+function areYouPlayingBanjo(name) {
+  return name.match(/^[rR]/) ? `${name} plays banjo`:`${name} does not play banjo`;
+}
+
+// console.log(areYouPlayingBanjo("Adam"));
+// console.log(areYouPlayingBanjo("ringo"));
+
+const stringToNumber = str => Number(str);
+
+
+function XO(str) {
+  let xCount = 0;
+  let oCount = 0;
+  for (let i = 0; i < str.length; i++) {
+    if(str[i].toLowerCase() === "x") xCount++;
+    if(str[i].toLowerCase() === "o") oCount++;
+  }
+  return xCount === oCount ? true : false;
+}
+
+// console.log(XO("xxOo"));
+
+var Calculator = {
+  average: function(...numbers) {
+    const numArray = [...numbers];
+    return numArray.length === 0 ? 0 : numArray.reduce((acc, val) => acc + val)/numArray.length;
+  }
+};
+
+console.log(Calculator.average());
