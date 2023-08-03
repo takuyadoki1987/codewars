@@ -322,17 +322,19 @@ function sumTwoSmallestNumbers(numbers) {
 // console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]));
 
 function printerError(s) {
-  let length = s.length;
   // matchメソッドは該当する値が無かった時、nullを返す
   // そのままではlengthを呼び出したときにエラーが出る nullはlengthが無いため
   //そこで、 || [] を記述することで matchの返り値がnullの場合は空の配列を返すようにする
   // 空の配列ならlengthを呼び出してもエラーが出ない 0が返るため
-  let errorLength = (s.match(/[n-z]/g) || []).length;
-  let result = `${errorLength}/${length}`;
-  return result;
+  if (typeof s === "string") {
+    let length = s.length;
+    let errorLength = s.match(/[n-z]/g || []).length;
+    let result = `${errorLength}/${length}`;
+    return result;
+  } 
 }
 // let s="aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"
-let s = "";
+// console.log(printerError());
 
 // console.log(s.match(/[n-z]/g).length);
 // console.log(s.length);
@@ -458,4 +460,26 @@ var Calculator = {
   }
 };
 
-console.log(Calculator.average());
+// console.log(Calculator.average());
+
+function simpleMultiplication(number) {
+  return number % 2 ? number * 9 : number * 8;
+}
+
+function reverse(string){
+  return string.split(" ").reverse().join(" ");
+}
+
+// console.log(reverse("this at expert an am I"));
+
+function countPositivesSumNegatives(input) {
+  const result = [0,0];
+  if (input !== null && input.length !== 0) {
+    input.forEach(val => val > 0 ? result[0]++ : result[1] += val);
+    return result;
+  } else {
+    return [];
+  }
+}
+
+// console.log(countPositivesSumNegatives([]))
