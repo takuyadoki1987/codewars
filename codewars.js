@@ -331,7 +331,7 @@ function printerError(s) {
     let errorLength = s.match(/[n-z]/g || []).length;
     let result = `${errorLength}/${length}`;
     return result;
-  } 
+  }
 }
 // let s="aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"
 // console.log(printerError());
@@ -386,7 +386,7 @@ function alphabetPosition(text) {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const textJoin = text.split(" ").join("").toLowerCase();
   const result = []
-  for(let i = 0; i < textJoin.length; i++) {
+  for (let i = 0; i < textJoin.length; i++) {
     let str = textJoin[i].replace(/[Ａ-Ｚａ-ｚ]/, x => String.fromCharCode(x.charCodeAt(0) - 0xFEE0));
     if (alphabet.indexOf(str) !== -1) {
       result.push(alphabet.indexOf(str) + 1);
@@ -399,28 +399,28 @@ function alphabetPosition(text) {
 
 function solve(n) {
   let result = 0;
-  if(n % 10) return -1;
-  while(Math.sign(n - 500) === 1 || Math.sign(n - 500) === 0)  {
+  if (n % 10) return -1;
+  while (Math.sign(n - 500) === 1 || Math.sign(n - 500) === 0) {
     result++;
     n -= 500;
   }
-  while(Math.sign(n - 200) === 1 || Math.sign(n - 200) === 0) {
+  while (Math.sign(n - 200) === 1 || Math.sign(n - 200) === 0) {
     result++;
     n -= 200;
   }
-  while(Math.sign(n - 100) === 1 || Math.sign(n - 100) === 0) {
+  while (Math.sign(n - 100) === 1 || Math.sign(n - 100) === 0) {
     result++;
     n -= 100;
   }
-  while(Math.sign(n - 50) === 1 || Math.sign(n - 50) === 0) {
+  while (Math.sign(n - 50) === 1 || Math.sign(n - 50) === 0) {
     result++;
     n -= 50;
   }
-  while(Math.sign(n - 20) === 1 || Math.sign(n - 20) === 0) {
+  while (Math.sign(n - 20) === 1 || Math.sign(n - 20) === 0) {
     result++;
     n -= 20;
   }
-  while(Math.sign(n - 10) === 1 || Math.sign(n - 10) === 0) {
+  while (Math.sign(n - 10) === 1 || Math.sign(n - 10) === 0) {
     result++;
     n -= 10;
   }
@@ -432,7 +432,7 @@ function solve(n) {
 
 
 function areYouPlayingBanjo(name) {
-  return name.match(/^[rR]/) ? `${name} plays banjo`:`${name} does not play banjo`;
+  return name.match(/^[rR]/) ? `${name} plays banjo` : `${name} does not play banjo`;
 }
 
 // console.log(areYouPlayingBanjo("Adam"));
@@ -445,8 +445,8 @@ function XO(str) {
   let xCount = 0;
   let oCount = 0;
   for (let i = 0; i < str.length; i++) {
-    if(str[i].toLowerCase() === "x") xCount++;
-    if(str[i].toLowerCase() === "o") oCount++;
+    if (str[i].toLowerCase() === "x") xCount++;
+    if (str[i].toLowerCase() === "o") oCount++;
   }
   return xCount === oCount ? true : false;
 }
@@ -454,9 +454,9 @@ function XO(str) {
 // console.log(XO("xxOo"));
 
 var Calculator = {
-  average: function(...numbers) {
+  average: function (...numbers) {
     const numArray = [...numbers];
-    return numArray.length === 0 ? 0 : numArray.reduce((acc, val) => acc + val)/numArray.length;
+    return numArray.length === 0 ? 0 : numArray.reduce((acc, val) => acc + val) / numArray.length;
   }
 };
 
@@ -466,14 +466,14 @@ function simpleMultiplication(number) {
   return number % 2 ? number * 9 : number * 8;
 }
 
-function reverse(string){
+function reverse(string) {
   return string.split(" ").reverse().join(" ");
 }
 
 // console.log(reverse("this at expert an am I"));
 
 function countPositivesSumNegatives(input) {
-  const result = [0,0];
+  const result = [0, 0];
   if (input !== null && input.length !== 0) {
     input.forEach(val => val > 0 ? result[0]++ : result[1] += val);
     return result;
@@ -483,3 +483,36 @@ function countPositivesSumNegatives(input) {
 }
 
 // console.log(countPositivesSumNegatives([]))
+
+function starSign(date) {
+  switch (date.getMonth()) {
+    case 1:
+      return date.getDate() >= 21 ? "Aquarius" : "Capricorn";
+    case 2:
+      return date.getDate() >= 20 ? "Pisces" : "Aquarius";
+    case 3:
+      return date.getDate() >= 21 ? "Aries" : "Pisces";
+    case 4:
+      return date.getDate() >= 21 ? "Taurus" : "Aries";
+    case 5:
+      return date.getDate() >= 22 ? "Gemini" : "Taurus";
+    case 6:
+      return date.getDate() >= 22 ? "Cancer" : "Gemini";
+    case 7:
+      return date.getDate() >= 23 ? "Leo" : "Cancer";
+    case 8:
+      return date.getDate() >= 24 ? "Virgo" : "Leo";
+    case 9:
+      return date.getDate() >= 24 ? "Libra" : "Virgo";
+    case 10:
+      return date.getDate() >= 24 ? "Scorpio" : "Libra";
+    case 11:
+      return date.getDate() >= 23 ? "Sagittarius" : "Scorpio";
+    case 12:
+      return date.getDate() >= 22 ? "Capricorn" : "Sagittarius";
+  }
+}
+
+// console.log(starSign(new Date(1970, 1, 21)));
+// console.log(starSign(new Date(1987, 3, 21)));
+// console.log(starSign(new Date(1992, 7, 9)));
