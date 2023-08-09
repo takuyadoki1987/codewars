@@ -516,3 +516,9 @@ function starSign(date) {
 // console.log(starSign(new Date(1970, 1, 21)));
 // console.log(starSign(new Date(1987, 3, 21)));
 // console.log(starSign(new Date(1992, 7, 9)));
+
+function fakeBin(x){
+  return Array.from(x).map(s => s >= 5 ? 1 : 0).join("");
+}
+
+// console.log(fakeBin('45385593107843568'));
