@@ -522,3 +522,14 @@ function fakeBin(x){
 }
 
 // console.log(fakeBin('45385593107843568'));
+
+function doubleChar(str) {
+  const result = [];
+  for (let i = 0; i < str.length; i++) {
+    result.push(str[i].repeat(2));
+  }
+  return result.join("");
+}
+
+
+console.log(doubleChar("abcd"));
