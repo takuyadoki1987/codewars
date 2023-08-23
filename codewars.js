@@ -532,4 +532,14 @@ function doubleChar(str) {
 }
 
 
-console.log(doubleChar("abcd"));
+// console.log(doubleChar("abcd"));
+
+function stringy(size) {
+  let result = "";
+  for (i = 1; i <= size; i++) {
+    i % 2 ? result += 1 : result += 0;
+  }
+  return result;
+}
+
+// console.log(stringy(3));
