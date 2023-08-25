@@ -1,3 +1,19 @@
+'use strict'
+// 1行目に記載している 'use strict' は削除しないでください
+
+function test(actual, expected) {
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.group();
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+    console.groupEnd();
+    console.trace();
+  }
+}
+
 // function anArgument(...str) {
 //     //Your code goes here
 //     const strs = [...str];
@@ -265,9 +281,9 @@ function squareSum(numbers) {
 // console.log(squareSum([0, 3, 4, 5]));
 // console.log(squareSum([3,7,12]));
 
-var isSquare = function (n) {
-  return Number.isInteger(Math.sqrt(n));
-}
+// var isSquare = function (n) {
+//   return Number.isInteger(Math.sqrt(n));
+// }
 
 // console.log(isSquare(26));
 
@@ -543,3 +559,37 @@ function stringy(size) {
 }
 
 // console.log(stringy(3));
+
+// squareDigits
+
+/*
+Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81)
+Example #2: An input of 765 will/should return 493625 because 72 is 49, 62 is 36, and 52 is 25. (49-36-25)
+Note: The function accepts an integer and returns an integer.
+Happy Coding!
+*/
+
+function squareDigits(num) {
+  return Number(Array.from(String(num)).map(n => n**2).join(""));
+}
+
+// test(squareDigits(3212), 9414);
+// test(squareDigits(2112), 4114);
+// test(squareDigits(0), 0);
+
+/*
+Given an integral number, determine if it's a square number:
+"In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself. "
+*/
+
+function isSquare(num) {
+  return Number.isInteger(Math.sqrt(num));
+}
+
+// test(isSquare(-1), false);
+// test(isSquare(0), true);
+// test(isSquare(3), false);
+// test(isSquare(4), true);
+// test(isSquare(25), true);
+// test(isSquare(26), false);
