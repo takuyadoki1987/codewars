@@ -667,3 +667,20 @@ function boredom(staff){
 // alex: 'regulation',
 // john: 'pissing about',
 // mr: 'retail' }), 'party time!!');
+
+let calculator = {
+  read() {
+    this.num1 = +prompt();
+    this.num2 = +prompt();
+  },
+  sum() {
+    return this.num1 + this.num2;
+  },
+  mul() {
+    return this.num1 * this.num2;
+  }
+}
+
+calculator.read()
+alert(calculator.sum());
+alert(calculator.mul());
