@@ -593,3 +593,77 @@ function isSquare(num) {
 // test(isSquare(4), true);
 // test(isSquare(25), true);
 // test(isSquare(26), false);
+
+function rentalCarCost(d) {
+  return d >= 7 ? 40 * d - 50 : d >= 3 ? 40* d -20 : 40 * d;
+}
+
+function consecutiveOnes(nums) {
+  let maxLength = 0;
+  let tmp = 0;
+  for(let i = 0; i < nums.length; i++) {
+    if (nums[i] === 1) {
+      tmp++;
+      if(maxLength < tmp) {
+        maxLength = tmp;
+      }
+    } else {
+      tmp = 0;
+    }
+  }
+  return maxLength;
+};
+
+
+// test(consecutiveOnes([1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0]),3)// => 3
+
+function boredom(staff){
+  let score = 0;
+  for (const depart in staff) {
+    switch(staff[depart]) {
+      case "accounts":
+        score += 1;
+        break;
+      case "finance":
+        score += 2;
+        break;
+      case "canteen":
+        score += 10;
+        break;
+      case "regulation":
+        score += 3;
+        break;
+      case "trading":
+        score += 6;
+        break;
+      case "change":
+        score += 6;
+        break;
+      case "IS":
+        score += 8;
+        break;
+      case "retail":
+        score += 5;
+        break;
+      case "cleaning":
+        score += 4;
+        break;
+      case "pissing about":
+        score += 25;
+        break;
+    }
+  }
+  return score <= 80 ? 'kill me now' : score >= 100 ?  'party time!!' : 'i can handle this';
+}
+
+// test(boredom({ tim: 'cleaning',
+// jim: 'regulation',
+// randy: 'IS',
+// sandy: 'retail',
+// andy: 'IS',
+// katie: 'change',
+// laura: 'pissing about',
+// saajid: 'IS',
+// alex: 'regulation',
+// john: 'pissing about',
+// mr: 'retail' }), 'party time!!');
