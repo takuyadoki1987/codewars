@@ -668,19 +668,62 @@ function boredom(staff){
 // john: 'pissing about',
 // mr: 'retail' }), 'party time!!');
 
-let calculator = {
-  read() {
+// let calculator = {
+//   read() {
+//     this.num1 = +prompt();
+//     this.num2 = +prompt();
+//   },
+//   sum() {
+//     return this.num1 + this.num2;
+//   },
+//   mul() {
+//     return this.num1 * this.num2;
+//   }
+// }
+
+// calculator.read()
+// alert(calculator.sum());
+// alert(calculator.mul());
+
+// 関数名の１文字目が大文字の場合、コンストラクタ関数
+function User(name) {
+  this.name = name;
+  this.admin = false;
+}
+
+let user = new User("takuya");
+// console.log(user.name);
+// console.log(user.admin);
+// console.log(typeof user);
+// console.log(typeof User);
+
+function Calculator() {
+  this.read = function() {
     this.num1 = +prompt();
     this.num2 = +prompt();
-  },
-  sum() {
+  };
+  this.sum = function() {
     return this.num1 + this.num2;
-  },
-  mul() {
+  };
+  this.mul = function() {
     return this.num1 * this.num2;
+  };
+}
+
+// let calculator = new Calculator();
+// calculator.read();
+
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
+
+function Accumulator(startingValue) {
+  this.value = startingValue;
+  this.read = function() {
+    this.value += +prompt()
   }
 }
 
-calculator.read()
-alert(calculator.sum());
-alert(calculator.mul());
+// let accumulator = new Accumulator(1); // 初期値 1
+// accumulator.read(); // ユーザの入力値の加算
+// accumulator.read(); // ユーザの入力値の加算
+// alert(accumulator.value); // それらの値の合計を表示
